@@ -254,7 +254,7 @@ func setRouter() *gin.Engine {
 
 	r.GET("/", func(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, gin.H{
-			"message": "success",
+			"message": "welcome to simple api gorm auth using golang",
 		})
 	})
 
