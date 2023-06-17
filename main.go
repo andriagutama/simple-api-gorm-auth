@@ -308,5 +308,5 @@ func seederUser(db *gorm.DB) {
 func main() {
 	r := setRouter()
 
-	r.Run(":8080")
+	r.Run("")
 }
