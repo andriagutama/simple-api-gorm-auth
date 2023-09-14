@@ -211,3 +211,42 @@ Authorization | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NjM4OTYsIml
 }
 ```
 </details>
+
+### Delete Student
+
+<details>
+    <summary>
+        <code>DELETE</code> <code>/student/{id}</code>
+    </summary>
+
+#### header
+
+Key           | Value
+------------- | ----------------
+Accept        | application/json
+Content-Type  | application/json
+Authorization | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NjM4OTYsImlhdCI6MTY5NDY2MzI5NiwiaXNzIjoidGVzdCJ9.TcNz80OvkGGTuIwLcLe1CLCX7HEGAnQ-1okt_KixCPk
+
+#### failed response
+
+```javascript
+{
+    "error": "token contains an invalid number of segments",
+    "message": "not authorized"
+}
+```
+
+```javascript
+{
+    "message": "data not found"
+}
+```
+
+#### success response
+
+```javascript
+{
+    "message": "success delete"
+}
+```
+</details>
