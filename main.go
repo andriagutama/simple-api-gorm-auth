@@ -124,7 +124,7 @@ func setRouter() *gin.Engine {
 
 	r.POST("login", auth.LoginHandler)
 
-	r.POST("student", func(ctx *gin.Context) {
+	r.POST("student", middleware.AuthValid, func(ctx *gin.Context) {
 		postHandler(ctx, db)
 	})
 
@@ -136,11 +136,11 @@ func setRouter() *gin.Engine {
 		getHandler(ctx, db)
 	})
 
-	r.PUT("/student/:student_id", func(ctx *gin.Context) {
+	r.PUT("/student/:student_id", middleware.AuthValid, func(ctx *gin.Context) {
 		putHandler(ctx, db)
 	})
 
-	r.DELETE("/student/:student_id", func(ctx *gin.Context) {
+	r.DELETE("/student/:student_id", middleware.AuthValid, func(ctx *gin.Context) {
 		deleteHandler(ctx, db)
 	})
 

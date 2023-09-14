@@ -160,3 +160,54 @@ Authorization | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NjM4OTYsIml
 }
 ```
 </details>
+
+### Add Student
+
+<details>
+    <summary>
+        <code>POST</code> <code>/student</code>
+    </summary>
+
+#### header
+
+Key           | Value
+------------- | ----------------
+Accept        | application/json
+Content-Type  | application/json
+Authorization | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NjM4OTYsImlhdCI6MTY5NDY2MzI5NiwiaXNzIjoidGVzdCJ9.TcNz80OvkGGTuIwLcLe1CLCX7HEGAnQ-1okt_KixCPk
+
+#### body
+
+```javascript
+{
+    "student_name" : "Andy Murray",
+    "student_age" : 35,
+    "student_address" : "Glasgow",
+    "student_phone_no" : "0812345678"
+}
+```
+
+#### failed response
+
+```javascript
+{
+    "error": "token contains an invalid number of segments",
+    "message": "not authorized"
+}
+```
+
+#### success response
+
+```javascript
+{
+    "data": {
+        "student_id": 4,
+        "student_name": "Andy Murray",
+        "student_age": 35,
+        "student_address": "Glasgow",
+        "student_phone_no": "0812345678"
+    },
+    "message": "success created"
+}
+```
+</details>
