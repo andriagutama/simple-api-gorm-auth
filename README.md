@@ -250,3 +250,61 @@ Authorization | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NjM4OTYsIml
 }
 ```
 </details>
+
+### Edit Student
+
+<details>
+    <summary>
+        <code>PUT</code> <code>/student/{id}</code>
+    </summary>
+
+#### header
+
+Key           | Value
+------------- | ----------------
+Accept        | application/json
+Content-Type  | application/json
+Authorization | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NjM4OTYsImlhdCI6MTY5NDY2MzI5NiwiaXNzIjoidGVzdCJ9.TcNz80OvkGGTuIwLcLe1CLCX7HEGAnQ-1okt_KixCPk
+
+#### body
+
+```javascript
+{
+    "student_id" : 5,
+    "student_name" : "Andy Roddick",
+    "student_age" : 35,
+    "student_address" : "Nebraska",
+    "student_phone_no" : "0812345678"
+}
+```
+
+#### failed response
+
+```javascript
+{
+    "error": "token contains an invalid number of segments",
+    "message": "not authorized"
+}
+```
+
+```javascript
+{
+    "message": "data not found"
+}
+```
+
+#### success response
+
+```javascript
+{
+    "data": {
+        "student_id": 5,
+        "student_name": "Andy Roddick",
+        "student_age": 35,
+        "student_address": "Nebraska",
+        "student_phone_no": "0812345678"
+    },
+    "message": "success update"
+}
+```
+</details>
