@@ -122,3 +122,41 @@ Authorization | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NjM4OTYsIml
 }
 ```
 </details>
+
+### Get A Student
+
+<details>
+    <summary>
+        <code>GET</code> <code>/student/{id}</code>
+    </summary>
+
+#### header
+
+Key           | Value
+------------- | ----------------
+Accept        | application/json
+Authorization | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NjM4OTYsImlhdCI6MTY5NDY2MzI5NiwiaXNzIjoidGVzdCJ9.TcNz80OvkGGTuIwLcLe1CLCX7HEGAnQ-1okt_KixCPk 
+
+#### failed response
+
+```javascript
+{
+    "message": "data not found"
+}
+```
+
+#### success response
+
+```javascript
+{
+    "data": {
+        "student_id": 1,
+        "student_name": "Dono",
+        "student_age": 20,
+        "student_address": "Jakarta",
+        "student_phone_no": "0123456789"
+    },
+    "message": "success"
+}
+```
+</details>
