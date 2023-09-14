@@ -41,7 +41,7 @@ func LoginHandler(c *gin.Context) {
 	}
 
 	claim := jwt.StandardClaims{
-		ExpiresAt: time.Now().Add(time.Minute * 1).Unix(),
+		ExpiresAt: time.Now().Add(time.Minute * 10).Unix(),
 		Issuer:    "test",
 		IssuedAt:  time.Now().Unix(),
 	}
