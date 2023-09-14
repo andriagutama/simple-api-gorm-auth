@@ -2,13 +2,13 @@
 
 ## Golang Simple REST API using Golang and PostgreSQL
 
-Simple API using Golang. Course from myskill.id
+Simple API using Golang. Course from myskill.id.
 
 ### Environment
 
-Check PostgreSQL config in .env file
-Database should be exist
-Table will created while server started
+Check PostgreSQL config in .env file.
+Database should be exist.
+Table will created while server started.
 
 ```sql
 CREATE TABLE IF NOT EXISTS public.students
@@ -79,5 +79,46 @@ server will run at http://localhost:8080
 }
 ```
 
-Use "token" to access other APIs endpoints
+Use "token" to access other APIs endpoints.
+</details>
+
+### Get All Students
+
+<details>
+    <summary>
+        <code>GET</code> <code>/student</code>
+    </summary>
+
+#### header
+
+Key           | Value
+------------- | ----------------
+Accept        | application/json
+Authorization | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NjM4OTYsImlhdCI6MTY5NDY2MzI5NiwiaXNzIjoidGVzdCJ9.TcNz80OvkGGTuIwLcLe1CLCX7HEGAnQ-1okt_KixCPk 
+
+#### failed response
+
+```javascript
+{
+    "error": "token contains an invalid number of segments",
+    "message": "not authorized"
+}
+```
+
+#### success response
+
+```javascript
+{
+    "data": [
+        {
+            "student_id": 1,
+            "student_name": "Dono",
+            "student_age": 20,
+            "student_address": "Jakarta",
+            "student_phone_no": "0123456789"
+        }
+    ],
+    "message": "success"
+}
+```
 </details>
