@@ -45,3 +45,39 @@ server will run at http://localhost:8080
 }
 ```
 </details>
+
+### Login
+
+<details>
+    <summary>
+        <code>POST</code> <code>/login</code>
+    </summary>
+
+#### body
+
+```javascript
+{
+    "username" : "admin",
+    "password" : "password123"
+}
+```
+
+#### failed response
+
+```javascript
+{
+    "message": "anauthorized. invalid password"
+}
+```
+
+#### success response
+
+```javascript
+{
+    "message": "success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NjM4OTYsImlhdCI6MTY5NDY2MzI5NiwiaXNzIjoidGVzdCJ9.TcNz80OvkGGTuIwLcLe1CLCX7HEGAnQ-1okt_KixCPk"
+}
+```
+
+Use "token" to access other APIs endpoints
+</details>
